@@ -17,17 +17,14 @@ body {
     margin-bottom: 10px;
 }
 
-.news_list {
-    border-bottom: 1px #86315f dashed;
-}
-
 .title {
     border-bottom: 1px #86315f dashed;
     margin-bottom: 30px;
 }
 
-.page_title {
+.bottom_title {
     margin: 10px 0 5px 0;
+    border-top: 1px #86315f dashed;
 }
 
 time {
@@ -48,6 +45,7 @@ time {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-end;
+    margin-bottom: 10px;
 }
 
 .page_button {
@@ -65,4 +63,14 @@ time {
 .selected {
     background-color: #832b5b;
     color: #fefffc;
+}
+
+.news_item_title {
+    margin-bottom: 0;
+}
+
+.back_button {
+    padding-top: 10px;
+    font-size: 20px;
+    margin-bottom: 32px;
 }

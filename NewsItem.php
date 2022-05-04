@@ -16,7 +16,7 @@ class NewsItem {
                <div>
                     <time>'.date('d.m.Y',$item['idate']).'</time>
                     <div class="news_title">
-                        <a href=#>'.$item['title'].'</a>
+                        <a href=view.php?id='.$item['id'].'&page='.$page.'>'.$item['title'].'</a>
                     </div>
                 </div>
                 <div class="descr">'.$item['announce'].'</div> 
@@ -30,6 +30,17 @@ class NewsItem {
         for ($i = 1; $i <= $quantity; $i++) {
             $class = ($i == $page) ? '"page_button selected"' : '"page_button"';
             echo('<a class='.$class.' href=index.php?page='.$i.'>'.$i.'</a>');
+        }
+    }
+
+    function getNewsItem($id, $page) {
+        $data = $this->$db->getNews($id);
+        foreach($data as $item) {
+            echo('
+            <h1 class="title news_item_title">'.$item['title'].'</h1>
+            <div class="full_news"> '.$item['content'].' </div>
+            <a href="index.php?page='.$page.'" class="bottom_title back_button">Все новости>>></a>
+            ');  
         }
     }
 }

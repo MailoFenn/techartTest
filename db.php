@@ -18,5 +18,10 @@ class DB {
         $res = $this->$connection->query($query);
         return $res->rowCount();
     }
+
+    function getNews($id) {
+        $query = 'SELECT title, content FROM news WHERE id='.$id.';';
+        return $this->$connection->query($query);
+    }
 }
 ?>

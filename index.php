@@ -26,7 +26,7 @@ if (!$page) {
           <?php $news_generator->getNewsPage($page) ?>  
         </div>
         <div>
-            <h3 class='page_title'>Страницы:</h3>
+            <h3 class='bottom_title'>Страницы:</h3>
             <div class='page_button_container'>
                 <?php $news_generator->getPageButtons($page); ?>
             </div>
