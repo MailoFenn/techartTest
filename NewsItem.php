@@ -1,10 +1,15 @@
 <?php
 include 'db.php';
-$db = new DB;
+
 class NewsItem {
+    private $db;
+
+    function __construct() {
+        $this->$db = new DB;
+    }
+
     function getNewsPage($page) {
-        global $db;
-        $data = $db->getNewsId($page);
+        $data = $this->$db->getNewsInfo($page);
         foreach($data as $item) {
             echo('
             <div class="news_item">
