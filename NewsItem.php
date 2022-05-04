@@ -14,7 +14,7 @@ class NewsItem {
             echo('
             <div class="news_item">
                <div>
-                    <time>13.02.2012</time>
+                    <time>'.date('d.m.Y',$item['idate']).'</time>
                     <div class="title">
                         <a href=#>'.$item['title'].'</a>
                     </div>

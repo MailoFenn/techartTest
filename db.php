@@ -8,7 +8,8 @@ class DB {
 
     function getNewsInfo($page) {
         $offset = ($page - 1) * 5;
-        return $this->$connection->query('SELECT * FROM news LIMIT '.$offset.', 5');
+        $query = 'SELECT * FROM news ORDER BY idate LIMIT '.$offset.', 5';
+        return $this->$connection->query($query);
     }
 }
 ?>
