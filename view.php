@@ -4,7 +4,6 @@ include 'NewsItem.php';
 $news_generator = new NewsItem();
 
 $id = $_GET['id'];
-$page = $_GET['page'];
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +17,7 @@ $page = $_GET['page'];
 </head>
 <body>
     <div class='content'>
-        <?php $news_generator->getNewsItem($id, $page); ?>
+        <?php $news_generator->getNewsItem($id); ?>
     </div>
 </body>
 </html>
