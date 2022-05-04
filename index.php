@@ -2,6 +2,12 @@
 include 'NewsItem.php';
 
 $news_generator = new NewsItem();
+
+$page = $_GET['page'];
+
+if (!$page) {
+    $page = 1;
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +21,16 @@ $news_generator = new NewsItem();
 </head>
 <body>
     <div class='content'>
-        <h1 class='page_title'>Новости</h1>
-        <?php $news_generator->getNewsPage(1) ?>
+        <h1 class='title'>Новости</h1>
+        <div class="news_list">
+          <?php $news_generator->getNewsPage($page) ?>  
+        </div>
+        <div>
+            <h3 class='page_title'>Страницы:</h3>
+            <div class='page_button_container'>
+                <?php $news_generator->getPageButtons($page); ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>

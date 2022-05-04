@@ -15,13 +15,21 @@ class NewsItem {
             <div class="news_item">
                <div>
                     <time>'.date('d.m.Y',$item['idate']).'</time>
-                    <div class="title">
+                    <div class="news_title">
                         <a href=#>'.$item['title'].'</a>
                     </div>
                 </div>
                 <div class="descr">'.$item['announce'].'</div> 
             </div>');
         }
-        
+    }
+
+    function getPageButtons($page) {
+        $quantity = $this->$db->getNewsQuantity();
+        $quantity = ceil($quantity/5);
+        for ($i = 1; $i <= $quantity; $i++) {
+            $class = ($i == $page) ? '"page_button selected"' : '"page_button"';
+            echo('<a class='.$class.' href=index.php?page='.$i.'>'.$i.'</a>');
+        }
     }
 }
